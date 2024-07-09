@@ -5,7 +5,12 @@ import Timeline from "./components/Timeline.vue";
 <template>
   <div class="section">
     <div class="container">
-      <Timeline />
+      <Suspense>
+        <template #default>
+          <Timeline />
+        </template>
+        <template #fallback>Loading...</template>
+      </Suspense>
     </div>
   </div>
 </template>
